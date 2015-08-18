@@ -1,0 +1,49 @@
+<div class="home-wrapper" ng-controller="HomeCtrl">
+<div class="answer-wrapper">
+
+		
+		
+		
+	  	<div class="btn-group">
+		  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+		   	<span ng-if="activeCategory">{{activeCategory}}</span>
+		   	<span ng-if="!activeCategory">Wybierz kategorie</span>
+		    <span class="caret"></span>
+		  </a>
+		  <ul class="dropdown-menu">
+			<li ng-repeat="category in categories" ng-click="changeCategory(category.path)">
+				<span >{{category.name}}</span>
+			</li>
+		    <!-- dropdown menu links -->
+		  </ul>
+		</div>
+
+	<input ng-model="answer" ng-enter="checkAnswer()"/>
+	<div class="btn-group">
+		<div class="btn" ng-click="checkAnswer()">Sprawdz</div>
+		<div class="btn" ng-click="showTip=!showTip">Podpowiedz</div>
+	</div>
+	<div class="tip" ng-show="showTip">poprawna odpowiedz: {{randFileName}}</div>
+	<div class="rate" ng-if="showAnswer"><i ng-class="{'icon-good': good, 'icon-bad': !good}"></i></div>
+</div>
+<div class="photo-wrapper">
+	<!-- <img ng-src="data:image/jpeg;base64,{{pictureData}}" id="photo-id"/> -->
+
+	<img ng-src="data:image/JPG;base64,{{myPhoto}}"/>
+	<div class="next" ng-click="nextPhoto()"><i class="icon-right"></i></div>
+	<div class="prev" ng-click="prevPhoto()"><i class="icon-left"></i></div>
+</div>
+
+   <!-- <div ng-controller="CarouselCtrl" id="slides_control">
+            <div>
+                <carousel interval="myInterval">
+                    <slide ng-repeat="slide in slides" active="slide.active">
+                        <img ng-src="{{slide.image}}">
+                        <div class="carousel-caption">
+                            <h4>Slide {{$index+1}}</h4>
+                        </div>
+                    </slide>
+                </carousel>
+            </div>
+        </div> -->
+</div>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Drewienko</title>
+  
+  <%include src="meta/meta.html"%>
+  <link rel="stylesheet" type="text/css" href="<%=stylesPath%>">
+  <%include src="meta/loader.html"%>  
+</head>
+<body>
+  
+  <%template id="/" src="app/home/home.html"%>
+  <%template id="/gallery" src="app/gallery/gallery.html"%>
+  <%template id="/about" src="app/about/about.html"%>
+  <%template id="/about" src="app/contact/contact.html"%>
+  <%template id="tile" src="app/common/controls/tile/tile.html"%>
+  <%include src="app/app.html"%>  
+  
+  <%include src="meta/<%=scriptsPath%>"%>
+  <script>
+    $script.ready('scripts', function() {
+      angular.bootstrap(document, ['MargoSim']);
+    });
+  </script>
+
+</body>
+</html>
