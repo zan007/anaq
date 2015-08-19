@@ -13,7 +13,7 @@
     "lodash-node": "~2.4.x"
   },
    "scripts": {
-    "start": "node server.js"
+    "start": "node server/server.js"
   },
   "dependencies": {
     "ejs": "~1.0.0",
