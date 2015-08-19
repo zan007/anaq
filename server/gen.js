@@ -1,7 +1,6 @@
 var fs = require('fs'),
 	ipsum = require('lorem-ipsum'),
 	path = require('path'),
-	banks = JSON.parse(fs.readFileSync('data/banks.json')),
 	skills = JSON.parse(fs.readFileSync('data/skills.json'));
 
 	
