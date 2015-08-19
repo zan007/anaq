@@ -1,7 +1,6 @@
 var fs = require('fs'),
 	ipsum = require('lorem-ipsum'),
-	path = require('path'),
-	skills = JSON.parse(fs.readFileSync('data/skills.json'));
+	path = require('path');
 
 	
 
@@ -44,13 +43,13 @@ exports.generateData = function(accountsCount, transactionsCount, monthsBack, ne
 
 	var data = {banks: banks, categories: categories, accounts: accounts, transactions: transactions};
 */
-var data = {skills: skills};
-	fs.writeFile('data/data.json', JSON.stringify(data, null, 4), function(err) {
+var data = {};
+/*	fs.writeFile('data/data.json', JSON.stringify(data, null, 4), function(err) {
 		if (err)
 			return next(err, null);
 		console.log('Data written to data.json');
 		next(null, data);
-	});
+	});*/
 
 	return data;
 }
