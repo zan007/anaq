@@ -177,7 +177,7 @@ var runServer = function(err, generatedData) {
         throw err;
 
     data = generatedData;
-    app.listen(config.listenPort || process.env.PORT);
+    app.listen(process.env.PORT || config.listenPort);
     console.log('Listening on port: ' + config.listenPort);
 }
 
